@@ -22,7 +22,7 @@ jobs:
       - name: Tambahkan remote Dokku
         run: |
           git remote remove dokku || true
-          git remote add dokku dokku@178.248.73.107:django2
+          git remote add dokku dokku@${{ secrets.KNOWN_HOSTS }}:django2
           git remote -v 
           git fetch dokku main
           git diff main dokku/main
